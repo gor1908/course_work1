@@ -38,9 +38,9 @@ RUN echo "                      \n \
 
 RUN mkdir /var/www/cgi-bin
 
-COPY --from=compile-image /root/cpp.cgi /var/www/cgi-bin
+COPY --from=compile-image /root/cpp.cgi /usr/lib/cgi-bin
 
-RUN chmod -R u+rwx,g+x,o+x /var/www/cgi-bin
+RUN chmod -R u+rwx,g+x,o+x /usr/lib/cgi-bin
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
 
