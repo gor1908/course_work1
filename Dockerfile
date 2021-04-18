@@ -24,6 +24,19 @@ RUN service apache2 restart
 
 #enable cgi in the website root
 #second block to allow .htaccess
+RUN echo "                      \n \
+<Directory \"/var/www/cgi-bin\">    \n \
+   AllowOverride None           \n \
+   Options ExecCGI              \n \
+   Order allow, deny            \n \
+   Allow from all               \n \
+</Directory>                    \n \
+<Directory \"/var/www/cgi-bin\">\n \
+   Options All                  \n \
+</Directory>                    \n \
+" >> /etc/apache2/apache2.conf
+
+RUN mkdir /var/www/cgi-bin
 
 COPY --from=compile-image /root/cpp.cgi /var/www/cgi-bin
 
