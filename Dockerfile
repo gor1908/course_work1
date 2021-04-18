@@ -28,7 +28,7 @@ RUN echo "                      \n \
 <Directory \"/var/www/cgi-bin\">    \n \
    AllowOverride None           \n \
    Options ExecCGI              \n \
-   Order allow, deny            \n \
+   Order allow,deny            \n \
    Allow from all               \n \
 </Directory>                    \n \
 <Directory \"/var/www/cgi-bin\">\n \
