@@ -33,8 +33,7 @@ pipeline {
     }
     stage('Deploy') {
       steps{
-        #sh "ansible-playbook ansible.yml --user=root --extra-vars \"ansible_sudo_pass=q3q3q3\" --extra-vars \"ansible_python_interpreter=/usr/bin/python3\""
-	sh "docker run --rm -d -p80:80 gor1908/course_work1:latest"
+        sh "docker run --rm -d -p80:80 gor1908/course_work1:latest"
 
       }
     }
