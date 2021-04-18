@@ -6,7 +6,7 @@ RUN apt-get install -y --no-install-recommends gcc build-essential
 
 WORKDIR /root
 COPY cpp-cgi.cpp .
-RUN gcc -o cpp.cgi cpp-cgi.cpp
+RUN g++ -o cpp.cgi cpp-cgi.cpp
 
 # This is the second and final image; it copies the compiled
 # CGI-script over but starts from the base ubuntu:18.04 image.
