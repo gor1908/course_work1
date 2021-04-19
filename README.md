@@ -7,8 +7,10 @@ to bare metal or cloud servers.
 
 1.We have simple C++ CGI application (cpp-cgi.cpp), which outputs HTML page with
 random number.
+
 2.We use Jenkins to pull code from GitHub and make docker-image, which subsequently
 pushed to DockerHub.
+
 3.Dockerfile for building image has two images. One is for build C++ application
 from source code, another is runtime-image, which is pulled to DockerHub.
 
@@ -58,6 +60,7 @@ Runtime-Image
 	COPY --from=compile-image /root/cpp.cgi /usr/lib/cgi-bin
 	RUN chmod -R u+rwx,g+x,o+x /usr/lib/cgi-bin
 	CMD /usr/sbin/apache2ctl -D FOREGROUND
+
 
 
 4. Use Ansible to pull docker image from DockerHub and start it:
