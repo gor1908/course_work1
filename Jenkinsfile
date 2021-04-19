@@ -37,7 +37,7 @@ pipeline {
 	// sh "docker run --rm -d -p80:80 gor1908/course_work1:latest"
 	
 	//for deploying with Ansible in cluster
-	sh "ansible-playbook -i hosts ubuntu_playbook.yml --ask-become-pass"
+	sh "ansible-playbook -i hosts ubuntu-playbook.yml --ask-become-pass"
       }
     }
   }
